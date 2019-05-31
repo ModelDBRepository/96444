@@ -1,0 +1,17 @@
+//moddir random
+{load_file("nrngui.hoc")}
+proc launch() {
+	PWManager[0].hide(1)
+	chdir($s1)
+	load_file($s2)
+}
+
+{
+xpanel("Launch")
+xlabel("Prints spike train to stdout")
+xbutton("Ring (Serial)", "launch(\"ring\", \"ringser.hoc\")")
+xbutton("Ring (Parallel)", "launch(\"ring\", \"ringpar.hoc\")")
+xbutton("Random (Serial)", "launch(\"random\", \"ran3ser.hoc\")")
+xbutton("Random (Parallel)", "launch(\"random\", \"ran3par.hoc\")")
+xpanel()
+}
